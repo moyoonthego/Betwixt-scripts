@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Advertisements;
 
 public class OpenScores : MonoBehaviour
 {
@@ -15,8 +14,6 @@ public class OpenScores : MonoBehaviour
 
     void Start()
     {
-        const string adGameID = "2690066";
-        Advertisement.Initialize(adGameID);
         click = GameObject.Find("replay").GetComponent<AudioSource>();
         replaypanel = GameObject.Find("Replay Panel");
         replayanimation = replaypanel.GetComponent<Animation>();
@@ -27,10 +24,6 @@ public class OpenScores : MonoBehaviour
     void OnMouseDown()
     {
         onlyonce = 1;
-        if ((Advertisement.IsReady() == true) && (shouldI == 3))
-        {
-            Advertisement.Show();
-        }
     }
 
     void Update()

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Advertisements;
 
 public class ReplayGame : MonoBehaviour {
     public AudioSource click;
@@ -15,8 +14,6 @@ public class ReplayGame : MonoBehaviour {
 
     void Start()
     {
-        const string adGameID = "2690066";
-        Advertisement.Initialize(adGameID);
         click = GameObject.Find("replay").GetComponent<AudioSource>();
         replaypanel = GameObject.Find("Replay Panel");
         replaybutton = GameObject.Find("replay");
@@ -30,10 +27,6 @@ public class ReplayGame : MonoBehaviour {
     {
         onlyonce = 1;
         UpdateScore.ResetScore();
-        if ((Advertisement.IsReady() == true) && (shouldI == 3))
-        {
-            Advertisement.Show();
-        }
     }
 
     void Update()
